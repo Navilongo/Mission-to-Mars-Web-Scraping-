@@ -33,11 +33,25 @@
                 <h2>Featured Mars Image</h2>
                 <img src="{{mars_scraped.featured_image}}" alt="Featured Mars image">
             </div>
+        </div>    
         <div class="row">
             <div class="border">
                 <h2>Mars Statistics</h2>
                 {{mars_scraped.planet_profile_table}}
             </div>
+        <div class="row">
+            {% for hemisphere in mars_scraped.hemisphere_images %}
+            <div class="col-md-6">
+                <div>
+                    <img src="{{hemisphere.img_url}}">
+                </div>
+                <div>
+                    <h5> {{hemisphere.title}}</h5>
+                </div>    
+            </div>
+            {% endfor %}
+
+            </div>       
         </div>
 
         

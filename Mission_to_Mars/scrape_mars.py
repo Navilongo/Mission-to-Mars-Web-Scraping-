@@ -12,6 +12,8 @@ browser = Browser('chrome', **executable_path, headless=False)
 
 
 def scrape():
+    
+
     # URL of page to be scraped
     url = 'https://redplanetscience.com/'
     browser.visit(url)
@@ -84,19 +86,15 @@ def scrape():
         
     print(hemisphere_image_urls)
 
-
-    print(img_url)
-
-    print(hemisphere_image_urls)
-
-
-
+    
+    
     mars_scraped = {
         "news_title": news_title,
         "news_p": news_p,
         "feature_image": feature_image,
-        "planet_profile_table": str(planet_profile_table)
-        }
+        "planet_profile_table": str(planet_profile_table),
+        "hemisphere_images": hemisphere_image_urls
+    }
 
     return mars_scraped
 
