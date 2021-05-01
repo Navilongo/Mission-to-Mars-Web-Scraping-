@@ -94,9 +94,9 @@ def scrape():
     mars_scraped = {
         "news_title": news_title,
         "news_p": news_p,
-        "feature_image": feature_image
+        "feature_image": feature_image,
         "planet_profile_table": str(planet_profile_table)
-    }
+        }
 
-    return mars_dict
+    return mars_scraped
 
