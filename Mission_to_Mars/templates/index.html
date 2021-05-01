@@ -22,13 +22,27 @@
             </div>                        
         </div>
       
-        </div>
         <div class="row">
             <div class="col-md-6">
-                <h4>{{mars.news_title}}</h4>
-                <p>{{mars.news_p}}</p>
+                <h4>{{mars_scraped.news_title}}</h4>
+                <p>{{mars_scraped.news_p}}</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Featured Mars Image</h2>
+                <img src="{{mars_scraped.featured_image}}" alt="Featured Mars image">
+            </div>
+        <div class="row">
+            <div class="border">
+                <h2>Mars Statistics</h2>
+                {{mars_scraped.planet_profile_table}}
+            </div>
+        </div>
+
+        
+        
+        
 
     </div>
     
