@@ -44,13 +44,38 @@ def scrape():
     print(soup.prettify())
 
     planet_profile_table = soup.find_all('table', class_= "table table-striped")
+
+    links = browser.find_by_css('a.product-item img')
+
+
+    hemisphere_image_urls = []
+    img_url = {}
+    images = []
+
+    for i,link in enumerate(links): 
+        print(i, link)
+        browser.find_by_css('a.product-item img')[i].click()
+        
+        titles = browser.find_by_css('h2.title').text
+        print(titles)
+        
+        html = browser.html
+        soup = bs(html, 'html.parser')
+        images = url + soup.find('img', class_='wide-image')['src']
+    
+        img_url['title'] = titles
+        img_url['img_url'] = images
+        print(img_url)
+        hemisphere_image_urls.append(img_url)
+        browser.back()
         
  
     mars_scraped = {
         "news_title": news_title,
         "news_p": news_p,
         "feature_image": feature_image,
-        "planet_profile_table": str(planet_profile_table)
+        "planet_profile_table": str(planet_profile_table),
+        "mars_hemispheres": hemisphere_image_urls
     }
     
     browser.quit()

@@ -40,6 +40,17 @@
                 {{mars_scraped.planet_profile_table | safe}}
             </div>
         </div>
+        <div class='row'>
+            <div class="col-md-3">
+                {% for hem in mars_scraped.mars_hemispheres %}   
+                <img src='hem.img_url'  alt="Featured Mars image" height=300 width =400>
+                <img src='hem[1].img_url'  alt="Featured Mars image" height=300 width =400>
+                <img src='hem[2].img_url'  alt="Featured Mars image" height=300 width =400>
+                <img src='hem[3].img_url'  alt="Featured Mars image" height=300 width =400>
+                {% endfor %} 
+            </div>
+        </div> 
+        
 
         
         
